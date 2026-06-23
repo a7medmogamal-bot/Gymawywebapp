@@ -1,0 +1,56 @@
+{
+    "name": "Gymawy | جيماوي",
+    "short_name": "Gymawy",
+    "description": "منصة الجيمات الذكية في مصر - تصفح واشترك في أفضل الجيمات مجاناً",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#F0F2F5",
+    "theme_color": "#6C5CE7",
+    "orientation": "portrait-primary",
+    "lang": "ar-EG",
+    "dir": "rtl",
+    "icons": [
+        {
+            "src": "https://i.ibb.co/XZH0qHBR/logo.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "https://i.ibb.co/XZH0qHBR/logo.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "https://i.ibb.co/XZH0qHBR/logo.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "https://i.ibb.co/XZH0qHBR/logo.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "https://i.ibb.co/XZH0qHBR/logo.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "https://i.ibb.co/XZH0qHBR/logo.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "https://i.ibb.co/XZH0qHBR/logo.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "https://i.ibb.co/XZH0qHBR/logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
