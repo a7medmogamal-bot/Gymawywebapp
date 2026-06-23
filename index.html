@@ -1,21 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Gymawy</title>
-    
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gymawy | جيماوي - منصة الجيمات الذكية</title>
-    <meta name="description" content="أول منصة جيمات ذكية في مصر - تصفح واشترك في أفضل الجيمات مجاناً">
+    <title>Gymawy | جيماوي</title>
+    <meta name="description" content="منصة الجيمات الذكية في مصر">
     
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#6C5CE7">
@@ -38,7 +27,7 @@
             --success: #00B894; --danger: #FF6B6B; --warning: #FDCB6E;
             --dark: #2D3436; --gray: #636E72; --gray-light: #B2BEC3;
             --light: #F8F9FA; --white: #FFFFFF; --border: #E9ECEF;
-            --shadow: 0 2px 15px rgba(0,0,0,0.08); --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+            --shadow: 0 2px 15px rgba(0,0,0,0.08);
             --radius: 20px; --radius-sm: 12px; --radius-xs: 8px;
             --bg: #F0F2F5; --card: #FFFFFF;
             --text: #2D3436; --text-secondary: #636E72;
@@ -50,36 +39,36 @@
             --shadow: 0 2px 15px rgba(0,0,0,0.3); --light: #1F2B47;
             --white: #16213E; --gray: #A0A0A0; --gray-light: #6B7280;
         }
-        * { margin:0; padding:0; box-sizing:border-box; font-family:'Cairo',sans-serif; -webkit-tap-highlight-color:transparent; }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Cairo',sans-serif; }
         body { background:var(--bg); min-height:100vh; color:var(--text); overflow-x:hidden; padding-bottom:80px; }
 
         @keyframes fadeIn { from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
         @keyframes slideUp { from{opacity:0;transform:translateY(100%);} to{opacity:1;transform:translateY(0);} }
         @keyframes bounceIn { 0%{transform:scale(0.3);opacity:0;} 50%{transform:scale(1.05);} 100%{transform:scale(1);opacity:1;} }
         @keyframes spin { to{transform:rotate(360deg);} }
-        @keyframes heartBeat { 0%,100%{transform:scale(1);} 25%{transform:scale(1.2);} 50%{transform:scale(1);} 75%{transform:scale(1.2);} }
         @keyframes skeleton { 0%{background-position:-200px 0;} 100%{background-position:200px 0;} }
 
+        /* ===== LOGIN ===== */
         .login-overlay {
             position:fixed; top:0; left:0; right:0; bottom:0;
             background:var(--bg); z-index:9999; display:flex;
-            align-items:flex-start; justify-content:center; padding:20px; overflow-y:auto;
+            align-items:center; justify-content:center; padding:20px;
         }
         .login-card {
             background:var(--card); border-radius:var(--radius); padding:30px 24px;
-            box-shadow:var(--shadow-lg); text-align:center; width:100%; max-width:400px;
-            animation:bounceIn 0.5s ease; margin-top:40px;
+            box-shadow:0 10px 40px rgba(0,0,0,0.12); text-align:center;
+            width:100%; max-width:400px; animation:bounceIn 0.5s ease;
         }
         .login-logo { width:90px; height:90px; border-radius:20px; margin:0 auto 16px; }
         .login-logo img { width:90px; height:90px; border-radius:20px; }
 
+        /* ===== ONBOARDING ===== */
         .onboarding-overlay {
             position:fixed; top:0; left:0; right:0; bottom:0;
             background:var(--bg); z-index:9998; display:none;
             align-items:center; justify-content:center;
         }
-        .onboarding-slides { width:90%; max-width:400px; text-align:center; }
-        .onboarding-slide { display:none; animation:bounceIn 0.5s ease; }
+        .onboarding-slide { display:none; text-align:center; animation:bounceIn 0.5s ease; }
         .onboarding-slide.active { display:block; }
         .onboarding-icon {
             width:100px; height:100px; border-radius:30px; margin:0 auto 20px;
@@ -93,10 +82,11 @@
         .onboarding-dot { width:10px; height:10px; border-radius:50%; background:var(--border); transition:var(--transition); }
         .onboarding-dot.active { background:var(--primary); width:24px; border-radius:5px; }
 
+        /* ===== HEADER ===== */
         .header {
             background:var(--card); padding:10px 16px; position:sticky; top:0; z-index:100;
-            box-shadow:var(--shadow); display:flex; align-items:center; justify-content:space-between;
-            border-bottom:1px solid var(--border);
+            box-shadow:0 2px 15px rgba(0,0,0,0.08); display:flex;
+            align-items:center; justify-content:space-between; border-bottom:1px solid var(--border);
         }
         .header-logo { display:flex; align-items:center; gap:10px; cursor:pointer; }
         .header-logo img { width:44px; height:44px; border-radius:12px; }
@@ -108,7 +98,6 @@
             justify-content:center; font-size:15px; color:var(--text);
             position:relative; transition:var(--transition);
         }
-        .btn-icon:active { transform:scale(0.9); }
         .btn-icon-badge {
             position:absolute; top:2px; right:2px; width:18px; height:18px;
             background:var(--danger); color:white; border-radius:50%;
@@ -117,17 +106,20 @@
         }
         .btn-icon-badge.show { display:flex; }
 
+        /* ===== CONTAINER ===== */
         .container { max-width:600px; margin:0 auto; padding:12px 16px; }
 
+        /* ===== BANNER ===== */
         .free-banner {
             background:linear-gradient(135deg,var(--success),#00A884); color:white;
             text-align:center; padding:10px; font-size:13px; font-weight:700;
-            border-radius:var(--radius-sm); margin-bottom:12px; animation:fadeIn 0.4s ease;
+            border-radius:var(--radius-sm); margin-bottom:12px;
         }
 
+        /* ===== SEARCH ===== */
         .search-box {
             background:var(--card); border-radius:50px; padding:4px 6px 4px 20px;
-            display:flex; align-items:center; gap:8px; box-shadow:var(--shadow);
+            display:flex; align-items:center; gap:8px; box-shadow:0 2px 15px rgba(0,0,0,0.08);
             border:2px solid transparent; margin-bottom:12px; transition:var(--transition);
         }
         .search-box:focus-within { border-color:var(--primary); }
@@ -136,9 +128,10 @@
         .filter-btn {
             width:42px; height:42px; border-radius:50%; background:var(--primary-bg);
             border:none; color:var(--primary); cursor:pointer; font-size:16px; flex-shrink:0;
-            display:flex; align-items:center; justify-content:center; transition:var(--transition);
+            display:flex; align-items:center; justify-content:center;
         }
 
+        /* ===== FILTER TAGS ===== */
         .filter-tags { display:flex; gap:6px; overflow-x:auto; padding:4px 0 8px; margin-bottom:8px; }
         .filter-tags::-webkit-scrollbar { display:none; }
         .filter-tag {
@@ -149,18 +142,12 @@
         }
         .filter-tag.active { background:var(--primary); border-color:var(--primary); color:white; }
 
-        .skeleton-card { background:var(--card); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); margin-bottom:16px; }
-        .skeleton-img { height:180px; background:linear-gradient(90deg,var(--light) 25%,var(--border) 50%,var(--light) 75%); background-size:200px 100%; animation:skeleton 1.5s infinite; }
-        .skeleton-body { padding:16px; }
-        .skeleton-line { height:14px; border-radius:7px; margin-bottom:8px; background:linear-gradient(90deg,var(--light) 25%,var(--border) 50%,var(--light) 75%); background-size:200px 100%; animation:skeleton 1.5s infinite; }
-        .skeleton-line.short { width:60%; }
-        .skeleton-line.medium { width:80%; }
-
+        /* ===== GYM CARD ===== */
         .gym-grid { display:flex; flex-direction:column; gap:16px; }
         .gym-card {
             background:var(--card); border-radius:var(--radius); overflow:hidden;
-            box-shadow:var(--shadow); cursor:pointer; border:2px solid transparent;
-            transition:var(--transition); animation:fadeIn 0.4s ease; position:relative;
+            box-shadow:0 2px 15px rgba(0,0,0,0.08); cursor:pointer;
+            border:2px solid transparent; transition:var(--transition); position:relative;
         }
         .gym-card:active { transform:scale(0.98); }
         .gym-card-header { position:relative; width:100%; height:180px; background:linear-gradient(135deg,#667eea,#764ba2); overflow:hidden; }
@@ -172,9 +159,10 @@
         .badge-offer { top:12px; left:12px; background:var(--success); color:white; }
         .badge-gender { top:48px; right:12px; background:rgba(255,255,255,0.9); color:var(--dark); }
         .badge-qr { bottom:12px; left:12px; background:white; color:var(--dark); cursor:pointer; font-size:16px; padding:8px; border-radius:50%; width:32px; height:32px; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.2); }
-        .btn-favorite { position:absolute; top:12px; left:50px; z-index:5; width:32px; height:32px; border-radius:50%; background:white; border:none; cursor:pointer; font-size:14px; color:var(--gray-light); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.2); transition:var(--transition); }
+        .btn-favorite { position:absolute; top:12px; left:50px; z-index:5; width:32px; height:32px; border-radius:50%; background:white; border:none; cursor:pointer; font-size:14px; color:var(--gray-light); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.2); }
         .btn-favorite.active { color:var(--danger); animation:heartBeat 0.6s ease; }
-        .btn-share-card { position:absolute; top:12px; left:90px; z-index:5; width:32px; height:32px; border-radius:50%; background:white; border:none; cursor:pointer; font-size:14px; color:var(--gray-light); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.2); transition:var(--transition); }
+        @keyframes heartBeat { 0%,100%{transform:scale(1);} 25%{transform:scale(1.2);} 50%{transform:scale(1);} 75%{transform:scale(1.2);} }
+        .btn-share-card { position:absolute; top:12px; left:90px; z-index:5; width:32px; height:32px; border-radius:50%; background:white; border:none; cursor:pointer; font-size:14px; color:var(--gray-light); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.2); }
         .gym-card-body { padding:14px; }
         .gym-card-title { font-size:18px; font-weight:800; margin-bottom:4px; display:flex; justify-content:space-between; align-items:center; }
         .gym-card-location { font-size:12px; color:var(--text-secondary); margin-bottom:10px; display:flex; align-items:center; gap:4px; }
@@ -183,35 +171,38 @@
         .price-value { font-size:18px; font-weight:800; color:var(--primary); }
         .price-label { font-size:10px; color:var(--text-secondary); }
         .gym-card-footer { display:flex; justify-content:space-between; align-items:center; padding:12px 14px; border-top:1px solid var(--border); gap:8px; }
-        .btn-apply { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:white; padding:10px 20px; border-radius:50px; border:none; font-size:13px; font-weight:700; cursor:pointer; flex:1; display:flex; align-items:center; justify-content:center; gap:6px; font-family:'Cairo',sans-serif; transition:var(--transition); }
-        .btn-apply:active { transform:scale(0.95); }
+        .btn-apply { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:white; padding:10px 20px; border-radius:50px; border:none; font-size:13px; font-weight:700; cursor:pointer; flex:1; display:flex; align-items:center; justify-content:center; gap:6px; }
 
+        /* ===== PAGES ===== */
         .page { display:none; min-height:70vh; }
         .page.active { display:block; animation:fadeIn 0.3s ease; }
 
+        /* ===== SECTION TITLE ===== */
         .section-title { font-size:16px; font-weight:800; margin:16px 0 8px; display:flex; align-items:center; gap:8px; }
         .recent-grid { display:flex; gap:10px; overflow-x:auto; padding-bottom:8px; }
         .recent-grid::-webkit-scrollbar { display:none; }
-        .recent-card { min-width:140px; background:var(--card); border-radius:var(--radius-sm); overflow:hidden; box-shadow:var(--shadow); cursor:pointer; flex-shrink:0; }
+        .recent-card { min-width:140px; background:var(--card); border-radius:var(--radius-sm); overflow:hidden; box-shadow:0 2px 15px rgba(0,0,0,0.08); cursor:pointer; flex-shrink:0; }
         .recent-card img { width:100%; height:80px; object-fit:cover; }
         .recent-card .info { padding:8px; }
         .recent-card .name { font-size:11px; font-weight:700; }
         .recent-card .price { font-size:10px; color:var(--primary); }
 
+        /* ===== MODALS ===== */
         .modal-overlay { position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.6); z-index:1000; display:none; align-items:flex-end; justify-content:center; backdrop-filter:blur(4px); }
-        .modal-overlay.active { display:flex; animation:fadeIn 0.3s ease; }
-        .modal-sheet { background:var(--card); width:100%; max-width:600px; max-height:90vh; border-radius:24px 24px 0 0; overflow-y:auto; animation:slideUp 0.4s ease; box-shadow:0 -10px 40px rgba(0,0,0,0.2); }
-        @media (min-width:768px) { .modal-overlay { align-items:center; } .modal-sheet { border-radius:24px; max-height:85vh; } }
+        .modal-overlay.active { display:flex; }
+        .modal-sheet { background:var(--card); width:100%; max-width:600px; max-height:90vh; border-radius:24px 24px 0 0; overflow-y:auto; animation:slideUp 0.4s ease; }
+        @media(min-width:768px){ .modal-overlay{align-items:center;} .modal-sheet{border-radius:24px;max-height:85vh;} }
         .modal-handle { width:40px; height:4px; background:var(--gray-light); border-radius:2px; margin:12px auto; opacity:0.5; }
         .modal-header { padding:16px 20px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; background:var(--card); z-index:10; border-bottom:1px solid var(--border); }
         .modal-header h3 { font-size:16px; font-weight:800; display:flex; align-items:center; gap:8px; }
-        .modal-close { width:36px; height:36px; border-radius:50%; background:var(--light); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:14px; color:var(--text-secondary); transition:var(--transition); }
+        .modal-close { width:36px; height:36px; border-radius:50%; background:var(--light); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:14px; color:var(--text-secondary); }
         .modal-body { padding:20px; }
         .modal-footer { padding:16px 20px; border-top:1px solid var(--border); display:flex; flex-direction:column; gap:8px; position:sticky; bottom:0; background:var(--card); }
 
-        .sidebar-overlay { position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); z-index:2000; display:none; backdrop-filter:blur(2px); }
+        /* ===== SIDEBAR ===== */
+        .sidebar-overlay { position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); z-index:2000; display:none; }
         .sidebar-overlay.active { display:block; }
-        .sidebar { position:fixed; top:0; right:-300px; width:280px; height:100vh; background:var(--card); z-index:2001; transition:right 0.3s cubic-bezier(0.4,0,0.2,1); box-shadow:-5px 0 30px rgba(0,0,0,0.15); display:flex; flex-direction:column; }
+        .sidebar { position:fixed; top:0; right:-300px; width:280px; height:100vh; background:var(--card); z-index:2001; transition:right 0.3s; box-shadow:-5px 0 30px rgba(0,0,0,0.15); display:flex; flex-direction:column; }
         .sidebar.active { right:0; }
         .sidebar-header { padding:20px; border-bottom:1px solid var(--border); background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:white; display:flex; justify-content:space-between; align-items:center; }
         .sidebar-close { width:32px; height:32px; border-radius:50%; border:none; background:rgba(255,255,255,0.2); color:white; cursor:pointer; font-size:14px; }
@@ -222,35 +213,31 @@
         .sidebar-item i { width:24px; text-align:center; font-size:16px; }
         .sidebar-item .badge-new { background:var(--primary); color:white; padding:2px 8px; border-radius:10px; font-size:9px; margin-right:auto; }
 
+        /* ===== BOTTOM NAV ===== */
         .bottom-nav { position:fixed; bottom:0; left:0; right:0; background:var(--card); display:flex; justify-content:space-around; padding:8px 8px 14px; box-shadow:0 -4px 20px rgba(0,0,0,0.08); z-index:500; border-top:1px solid var(--border); }
         .nav-item { display:flex; flex-direction:column; align-items:center; gap:2px; cursor:pointer; padding:6px 12px; border-radius:16px; border:none; background:transparent; color:var(--gray-light); font-size:10px; font-weight:600; position:relative; min-width:60px; transition:var(--transition); font-family:'Cairo',sans-serif; }
         .nav-item.active { color:var(--primary); }
-        .nav-item i { font-size:22px; transition:var(--transition); }
-        .nav-item.active i { transform:translateY(-2px); }
+        .nav-item i { font-size:22px; }
         .nav-badge { position:absolute; top:0; right:6px; background:var(--danger); color:white; width:18px; height:18px; border-radius:50%; font-size:9px; display:none; align-items:center; justify-content:center; font-weight:700; border:2px solid var(--card); }
         .nav-badge.show { display:flex; }
 
-        .form-card { background:var(--card); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow); margin-bottom:16px; }
+        /* ===== FORMS ===== */
         .form-group { margin-bottom:12px; }
-        .form-group label { display:block; font-size:12px; font-weight:700; margin-bottom:4px; color:var(--text); }
+        .form-group label { display:block; font-size:12px; font-weight:700; margin-bottom:4px; }
         .form-control { width:100%; padding:12px 14px; border:2px solid var(--border); border-radius:var(--radius-xs); font-size:14px; background:var(--card); color:var(--text); transition:var(--transition); font-family:'Cairo',sans-serif; }
         .form-control:focus { outline:none; border-color:var(--primary); }
-        textarea.form-control { resize:vertical; min-height:80px; }
         .form-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-
         .btn { padding:14px 20px; border-radius:50px; border:none; font-size:14px; font-weight:700; cursor:pointer; width:100%; display:flex; align-items:center; justify-content:center; gap:8px; transition:var(--transition); font-family:'Cairo',sans-serif; }
-        .btn:active { transform:scale(0.96); }
         .btn-primary { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:white; }
         .btn-success { background:var(--success); color:white; }
         .btn-danger { background:var(--danger); color:white; }
         .btn-warning { background:var(--warning); color:#333; }
         .btn-outline { background:transparent; border:2px solid var(--border); color:var(--text-secondary); }
         .btn-sm { width:auto; padding:8px 14px; font-size:12px; }
-        .btn-xs { width:auto; padding:5px 10px; font-size:10px; border-radius:20px; }
         .btn-group { display:flex; gap:8px; flex-wrap:wrap; }
         .btn-group .btn { flex:1; }
 
-        .profile-card { background:var(--card); border-radius:var(--radius); padding:24px; text-align:center; box-shadow:var(--shadow); margin-bottom:16px; }
+        .profile-card { background:var(--card); border-radius:var(--radius); padding:24px; text-align:center; box-shadow:0 2px 15px rgba(0,0,0,0.08); margin-bottom:16px; }
         .profile-avatar { width:80px; height:80px; border-radius:50%; background:linear-gradient(135deg,var(--primary),var(--secondary)); margin:0 auto 12px; display:flex; align-items:center; justify-content:center; font-size:36px; color:white; }
         .membership-card { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); border-radius:16px; padding:16px; color:white; margin-bottom:12px; position:relative; }
         .membership-card .info-box { background:rgba(255,255,255,0.15); border-radius:8px; padding:8px; margin:8px 0; }
@@ -259,12 +246,12 @@
         .status-expired { background:rgba(255,107,107,0.3); padding:4px 10px; border-radius:50px; font-size:10px; }
 
         .chat-messages { max-height:350px; overflow-y:auto; padding:12px; background:var(--bg); border-radius:var(--radius-sm); margin-bottom:12px; display:flex; flex-direction:column; gap:8px; }
-        .chat-bubble { max-width:80%; padding:10px 16px; border-radius:16px; font-size:13px; animation:fadeIn 0.3s ease; }
-        .chat-bubble.outgoing { background:var(--primary); color:white; align-self:flex-end; border-bottom-right-radius:4px; }
-        .chat-bubble.incoming { background:var(--card); color:var(--text); border:1px solid var(--border); align-self:flex-start; border-bottom-left-radius:4px; }
+        .chat-bubble { max-width:80%; padding:10px 16px; border-radius:16px; font-size:13px; }
+        .chat-bubble.outgoing { background:var(--primary); color:white; align-self:flex-end; }
+        .chat-bubble.incoming { background:var(--card); color:var(--text); border:1px solid var(--border); align-self:flex-start; }
         .chat-time { font-size:9px; opacity:0.7; margin-top:4px; }
 
-        .notification-item { background:var(--card); border-radius:12px; padding:14px; margin-bottom:8px; cursor:pointer; border-right:4px solid transparent; transition:var(--transition); }
+        .notification-item { background:var(--card); border-radius:12px; padding:14px; margin-bottom:8px; cursor:pointer; border-right:4px solid transparent; }
         .notification-item.unread { background:var(--primary-bg); border-right-color:var(--primary); }
 
         .info-section { margin-bottom:16px; }
@@ -273,7 +260,7 @@
         .info-highlight { background:var(--primary-bg); border-radius:var(--radius-xs); padding:12px; font-size:13px; color:var(--primary); display:flex; align-items:center; gap:8px; }
 
         .gender-radio-group { display:flex; gap:8px; }
-        .gender-radio { flex:1; padding:14px; border:2px solid var(--border); border-radius:var(--radius-xs); text-align:center; cursor:pointer; font-weight:700; font-size:13px; display:flex; align-items:center; justify-content:center; gap:6px; background:var(--card); transition:var(--transition); }
+        .gender-radio { flex:1; padding:14px; border:2px solid var(--border); border-radius:var(--radius-xs); text-align:center; cursor:pointer; font-weight:700; font-size:13px; display:flex; align-items:center; justify-content:center; gap:6px; background:var(--card); }
         .gender-radio.selected { border-color:var(--primary); background:var(--primary-bg); color:var(--primary); }
 
         .stars-input { display:flex; gap:4px; justify-content:center; font-size:28px; cursor:pointer; }
@@ -283,7 +270,7 @@
         .auth-links { display:flex; gap:10px; justify-content:center; margin-top:12px; flex-wrap:wrap; }
         .auth-link { color:var(--primary); font-weight:700; cursor:pointer; font-size:13px; text-decoration:underline; }
 
-        .images-slider { display:flex; gap:8px; overflow-x:auto; margin-bottom:16px; border-radius:var(--radius-sm); }
+        .images-slider { display:flex; gap:8px; overflow-x:auto; margin-bottom:16px; }
         .images-slider::-webkit-scrollbar { display:none; }
         .images-slider img { width:250px; height:180px; object-fit:cover; border-radius:var(--radius-sm); flex-shrink:0; }
 
@@ -291,7 +278,6 @@
         .loading-spinner i { font-size:32px; color:var(--primary); animation:spin 0.8s linear infinite; }
         .empty-state { text-align:center; padding:40px 20px; color:var(--text-secondary); }
         .empty-state i { font-size:60px; opacity:0.3; margin-bottom:16px; display:block; }
-        .empty-state h4 { font-size:16px; margin-bottom:8px; }
 
         .confirm-dialog { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:var(--card); border-radius:var(--radius); padding:24px; z-index:3000; width:90%; max-width:360px; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,0.3); display:none; animation:bounceIn 0.4s ease; }
         .confirm-dialog.active { display:block; }
@@ -300,7 +286,7 @@
         .btn-confirm-yes { background:var(--danger); color:white; }
         .btn-confirm-no { background:var(--light); color:var(--text); }
 
-        .toast { position:fixed; bottom:90px; left:50%; transform:translateX(-50%); max-width:90%; padding:12px 20px; border-radius:50px; font-weight:600; font-size:13px; z-index:2000; display:none; box-shadow:var(--shadow-lg); animation:slideUp 0.3s ease; text-align:center; }
+        .toast { position:fixed; bottom:90px; left:50%; transform:translateX(-50%); max-width:90%; padding:12px 20px; border-radius:50px; font-weight:600; font-size:13px; z-index:2000; display:none; box-shadow:0 10px 40px rgba(0,0,0,0.12); animation:slideUp 0.3s ease; text-align:center; }
         .toast.success { background:var(--success); color:white; }
         .toast.error { background:var(--danger); color:white; }
         .toast.warning { background:var(--warning); color:#333; }
@@ -310,23 +296,17 @@
         .request-card { background:var(--card); border-radius:12px; padding:14px; margin-bottom:8px; border:1px solid var(--border); }
         .qr-container { text-align:center; padding:20px; }
         .share-menu { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; padding:10px; }
-        .share-btn { width:50px; height:50px; border-radius:50%; border:none; cursor:pointer; font-size:22px; color:white; transition:var(--transition); display:flex; align-items:center; justify-content:center; }
-        .share-btn:active { transform:scale(0.9); }
+        .share-btn { width:50px; height:50px; border-radius:50%; border:none; cursor:pointer; font-size:22px; color:white; }
         .share-btn.whatsapp { background:#25D366; }
         .share-btn.facebook { background:#1877F2; }
         .share-btn.copy { background:var(--gray); }
 
-        @media (max-width:400px) {
-            .gym-card-header { height:150px; }
-            .price-tag { padding:6px 10px; min-width:60px; }
-            .price-value { font-size:15px; }
-            .form-row { grid-template-columns:1fr; }
-        }
+        @media(max-width:400px){ .gym-card-header{height:150px;} .price-tag{padding:6px 10px;min-width:60px;} .price-value{font-size:15px;} .form-row{grid-template-columns:1fr;} }
     </style>
 </head>
 <body>
 
-    <!-- Login Overlay -->
+    <!-- LOGIN -->
     <div class="login-overlay" id="loginOverlay">
         <div class="login-card">
             <div class="login-logo"><img src="https://i.ibb.co/XZH0qHBR/logo.png" alt="Gymawy"></div>
@@ -341,26 +321,24 @@
         </div>
     </div>
 
-    <!-- Onboarding -->
+    <!-- ONBOARDING -->
     <div class="onboarding-overlay" id="onboardingOverlay">
-        <div class="onboarding-slides">
-            <div class="onboarding-slide active"><div class="onboarding-icon purple"><i class="fas fa-dumbbell"></i></div><h2>أهلاً بك في Gymawy</h2><p style="color:var(--text-secondary);">أول منصة جيمات ذكية في مصر</p><div class="onboarding-dots"><div class="onboarding-dot active"></div><div class="onboarding-dot"></div><div class="onboarding-dot"></div></div><button class="btn btn-primary" onclick="nextOnboarding(2)">التالي</button></div>
-            <div class="onboarding-slide"><div class="onboarding-icon green"><i class="fas fa-map-marker-alt"></i></div><h2>تصفح الجيمات</h2><p style="color:var(--text-secondary);">شوف الجيمات القريبة منك وقارن بينهم</p><div class="onboarding-dots"><div class="onboarding-dot"></div><div class="onboarding-dot active"></div><div class="onboarding-dot"></div></div><button class="btn btn-primary" onclick="nextOnboarding(3)">التالي</button></div>
-            <div class="onboarding-slide"><div class="onboarding-icon orange"><i class="fas fa-check-circle"></i></div><h2>اشترك وانت في مكانك</h2><p style="color:var(--text-secondary);">مجاني 100% - ادفع بس رسوم الجيم</p><div class="onboarding-dots"><div class="onboarding-dot"></div><div class="onboarding-dot"></div><div class="onboarding-dot active"></div></div><button class="btn btn-success" onclick="finishOnboarding()">يلا نبدأ</button></div>
-        </div>
+        <div class="onboarding-slide active"><div class="onboarding-icon purple"><i class="fas fa-dumbbell"></i></div><h2>أهلاً بك في Gymawy</h2><p style="color:var(--text-secondary);">أول منصة جيمات ذكية في مصر</p><div class="onboarding-dots"><div class="onboarding-dot active"></div><div class="onboarding-dot"></div><div class="onboarding-dot"></div></div><button class="btn btn-primary" onclick="nextOnboarding(2)">التالي</button></div>
+        <div class="onboarding-slide"><div class="onboarding-icon green"><i class="fas fa-map-marker-alt"></i></div><h2>تصفح الجيمات</h2><p style="color:var(--text-secondary);">شوف الجيمات القريبة منك وقارن بينهم</p><div class="onboarding-dots"><div class="onboarding-dot"></div><div class="onboarding-dot active"></div><div class="onboarding-dot"></div></div><button class="btn btn-primary" onclick="nextOnboarding(3)">التالي</button></div>
+        <div class="onboarding-slide"><div class="onboarding-icon orange"><i class="fas fa-check-circle"></i></div><h2>اشترك وانت في مكانك</h2><p style="color:var(--text-secondary);">مجاني 100% - ادفع بس رسوم الجيم</p><div class="onboarding-dots"><div class="onboarding-dot"></div><div class="onboarding-dot"></div><div class="onboarding-dot active"></div></div><button class="btn btn-success" onclick="finishOnboarding()">يلا نبدأ</button></div>
     </div>
 
-    <!-- Header -->
+    <!-- HEADER -->
     <header class="header" id="mainHeader" style="display:none;">
         <div class="header-logo" onclick="goTo('home')"><img src="https://i.ibb.co/XZH0qHBR/logo.png" alt="Gymawy"><span>Gymawy</span></div>
         <div class="header-actions">
             <button class="btn-icon" onclick="toggleDarkMode()" title="الوضع الليلي"><i class="fas fa-moon dark-mode-icon"></i></button>
-            <button class="btn-icon" onclick="showNotifications()" title="الإشعارات"><i class="fas fa-bell"></i><span class="btn-icon-badge" id="notifBadge">0</span></button>
-            <button class="btn-icon" onclick="openSidebar()" title="القائمة"><i class="fas fa-bars"></i></button>
+            <button class="btn-icon" onclick="showNotifications()"><i class="fas fa-bell"></i><span class="btn-icon-badge" id="notifBadge">0</span></button>
+            <button class="btn-icon" onclick="openSidebar()"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
-    <!-- Main Container -->
+    <!-- MAIN -->
     <main class="container" id="mainContainer" style="display:none;">
         <div id="homePage" class="page active">
             <div class="free-banner"><i class="fas fa-gift"></i> التطبيق مجاني 100% للمستخدمين - ادفع فقط رسوم الجيم</div>
@@ -375,31 +353,22 @@
             </div>
             <div class="section-title" id="recentTitle" style="display:none;"><i class="fas fa-history"></i> آخر مشاهدة</div>
             <div class="recent-grid" id="recentGrid"></div>
-            <div class="gym-grid" id="gymsList">
-                <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line medium"></div><div class="skeleton-line short"></div></div></div>
-                <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line medium"></div><div class="skeleton-line short"></div></div></div>
-            </div>
+            <div class="gym-grid" id="gymsList"></div>
         </div>
         <div id="profilePage" class="page"><div id="profileContent"></div></div>
         <div id="requestsPage" class="page"><h3 style="margin-bottom:16px;"><i class="fas fa-clipboard-list"></i> طلباتي</h3><div id="myRequestsContent"></div></div>
     </main>
 
-    <!-- Gym Modal -->
+    <!-- MODALS -->
     <div class="modal-overlay" id="gymModal"><div class="modal-sheet"><div class="modal-handle"></div><div class="modal-header"><h3 id="modalTitle">تفاصيل</h3><button class="modal-close" onclick="closeModal('gymModal')"><i class="fas fa-times"></i></button></div><div class="modal-body" id="modalBody"></div><div class="modal-footer" id="modalFooter"></div></div></div>
-    
-    <!-- Filter Modal -->
     <div class="modal-overlay" id="filterModal"><div class="modal-sheet"><div class="modal-handle"></div><div class="modal-header"><h3><i class="fas fa-sliders-h"></i> تصفية</h3><button class="modal-close" onclick="closeModal('filterModal')"><i class="fas fa-times"></i></button></div><div class="modal-body" id="filterBody"></div><div class="modal-footer" id="filterFooter"></div></div></div>
-    
-    <!-- QR Modal -->
     <div class="modal-overlay" id="qrModal"><div class="modal-sheet"><div class="modal-handle"></div><div class="modal-header"><h3><i class="fas fa-qrcode"></i> QR Code</h3><button class="modal-close" onclick="closeModal('qrModal')"><i class="fas fa-times"></i></button></div><div class="modal-body"><div class="qr-container"><p style="margin-bottom:12px;font-weight:700;" id="qrGymName"></p><div id="qrCode"></div><button class="btn btn-primary btn-sm" onclick="copyGymLink()" style="margin-top:12px;"><i class="fas fa-copy"></i> نسخ الرابط</button></div></div></div></div>
-    
-    <!-- Share Modal -->
     <div class="modal-overlay" id="shareModal"><div class="modal-sheet"><div class="modal-handle"></div><div class="modal-header"><h3><i class="fas fa-share-alt"></i> مشاركة</h3><button class="modal-close" onclick="closeModal('shareModal')"><i class="fas fa-times"></i></button></div><div class="modal-body"><p style="text-align:center;margin-bottom:12px;" id="shareGymName"></p><div class="share-menu"><button class="share-btn whatsapp" onclick="shareViaWhatsApp()"><i class="fab fa-whatsapp"></i></button><button class="share-btn facebook" onclick="shareViaFacebook()"><i class="fab fa-facebook-f"></i></button><button class="share-btn copy" onclick="copyShareLink()"><i class="fas fa-link"></i></button></div></div></div></div>
 
-    <!-- Confirm Dialog -->
+    <!-- CONFIRM -->
     <div class="confirm-dialog" id="confirmDialog"><h3 id="confirmTitle">تأكيد</h3><p id="confirmBody">هل أنت متأكد؟</p><div class="confirm-buttons"><button class="btn-confirm-no" id="confirmCancel">إلغاء</button><button class="btn-confirm-yes" id="confirmYes">تأكيد</button></div></div>
 
-    <!-- Sidebar -->
+    <!-- SIDEBAR -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header"><h3>Gymawy</h3><button class="sidebar-close" id="sidebarClose"><i class="fas fa-times"></i></button></div>
@@ -419,10 +388,10 @@
         </div>
     </aside>
 
-    <!-- Toast -->
+    <!-- TOAST -->
     <div class="toast" id="toast"></div>
 
-    <!-- Bottom Nav -->
+    <!-- BOTTOM NAV -->
     <nav class="bottom-nav" id="bottomNav" style="display:none;">
         <button class="nav-item active" data-page="home"><i class="fas fa-home"></i><span>الرئيسية</span></button>
         <button class="nav-item" data-page="notifications"><i class="fas fa-bell"></i><span>إشعارات</span><span class="nav-badge" id="navNotifBadge">0</span></button>
@@ -430,20 +399,11 @@
         <button class="nav-item" data-page="profile"><i class="fas fa-user"></i><span>حسابي</span></button>
     </nav>
 
-    <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-    <!-- CryptoJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    <!-- QR Code -->
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-    <!-- App -->
     <script src="app.js"></script>
 </body>
-</html>
-    <script  src="./script.js"></script>
-
-  </body>
-  
 </html>
