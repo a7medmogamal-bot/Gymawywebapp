@@ -1,22 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Gymawy | جيماوي</title>
-    
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="google-site-verification" content="FToscdDzJECBXQITnlnmeCaBqoXg_uKvxIX8YiDn-LE" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gymawy | جيماوي</title>
     <meta name="description" content="منصة الجيمات الذكية في مصر">
-    <meta name="google-site-verification" content="FToscdDzJECBXQITnlnmeCaBqoXg_uKvxIX8YiDn-LE" />
     
     <meta name="theme-color" content="#6C5CE7">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -233,7 +222,6 @@
 </head>
 <body>
 
-    <!-- LOGIN -->
     <div class="login-overlay" id="loginOverlay">
         <div class="login-card">
             <div class="login-logo"><img src="https://i.ibb.co/XZH0qHBR/logo.png" alt="Gymawy"></div>
@@ -248,14 +236,12 @@
         </div>
     </div>
 
-    <!-- ONBOARDING -->
     <div class="onboarding-overlay" id="onboardingOverlay">
         <div class="onboarding-slide active"><div class="onboarding-icon purple"><i class="fas fa-dumbbell"></i></div><h2>أهلاً بك في Gymawy</h2><p style="color:var(--text-secondary);">أول منصة جيمات ذكية في مصر</p><div class="onboarding-dots"><div class="onboarding-dot active"></div><div class="onboarding-dot"></div><div class="onboarding-dot"></div></div><button class="btn btn-primary" onclick="nextOnboarding(2)">التالي</button></div>
         <div class="onboarding-slide"><div class="onboarding-icon green"><i class="fas fa-map-marker-alt"></i></div><h2>تصفح الجيمات</h2><p style="color:var(--text-secondary);">شوف الجيمات القريبة منك وقارن بينهم</p><div class="onboarding-dots"><div class="onboarding-dot"></div><div class="onboarding-dot active"></div><div class="onboarding-dot"></div></div><button class="btn btn-primary" onclick="nextOnboarding(3)">التالي</button></div>
         <div class="onboarding-slide"><div class="onboarding-icon orange"><i class="fas fa-check-circle"></i></div><h2>اشترك وانت في مكانك</h2><p style="color:var(--text-secondary);">مجاني 100% - ادفع بس رسوم الجيم</p><div class="onboarding-dots"><div class="onboarding-dot"></div><div class="onboarding-dot"></div><div class="onboarding-dot active"></div></div><button class="btn btn-success" onclick="finishOnboarding()">يلا نبدأ</button></div>
     </div>
 
-    <!-- HEADER -->
     <header class="header" id="mainHeader" style="display:none;">
         <div class="header-logo" onclick="goTo('home')"><img src="https://i.ibb.co/XZH0qHBR/logo.png" alt="Gymawy"><span>Gymawy</span></div>
         <div class="header-actions">
@@ -265,19 +251,11 @@
         </div>
     </header>
 
-    <!-- MAIN -->
     <main class="container" id="mainContainer" style="display:none;">
         <div id="homePage" class="page active">
             <div class="free-banner"><i class="fas fa-gift"></i> التطبيق مجاني 100% للمستخدمين - ادفع فقط رسوم الجيم</div>
             <div class="search-box"><i class="fas fa-search" style="color:var(--gray-light);flex-shrink:0;"></i><input type="text" id="searchInput" placeholder="ابحث عن جيم، مدينة، محافظة..."><button class="filter-btn" onclick="showFilterModal()"><i class="fas fa-sliders-h"></i></button></div>
-            <div class="filter-tags" id="filterTags">
-                <span class="filter-tag active" data-filter="all">الكل</span>
-                <span class="filter-tag" data-filter="verified"><i class="fas fa-check-circle"></i> موثق</span>
-                <span class="filter-tag" data-filter="mixed"><i class="fas fa-venus-mars"></i> مختلط</span>
-                <span class="filter-tag" data-filter="men"><i class="fas fa-male"></i> رجال</span>
-                <span class="filter-tag" data-filter="women"><i class="fas fa-female"></i> سيدات</span>
-                <span class="filter-tag" data-filter="offers"><i class="fas fa-tag"></i> عروض</span>
-            </div>
+            <div class="filter-tags" id="filterTags"><span class="filter-tag active" data-filter="all">الكل</span><span class="filter-tag" data-filter="verified"><i class="fas fa-check-circle"></i> موثق</span><span class="filter-tag" data-filter="mixed"><i class="fas fa-venus-mars"></i> مختلط</span><span class="filter-tag" data-filter="men"><i class="fas fa-male"></i> رجال</span><span class="filter-tag" data-filter="women"><i class="fas fa-female"></i> سيدات</span><span class="filter-tag" data-filter="offers"><i class="fas fa-tag"></i> عروض</span></div>
             <div class="section-title" id="recentTitle" style="display:none;"><i class="fas fa-history"></i> آخر مشاهدة</div>
             <div class="recent-grid" id="recentGrid"></div>
             <div class="gym-grid" id="gymsList"></div>
@@ -288,16 +266,11 @@
         <div id="requestsPage" class="page"><h3 style="margin-bottom:16px;"><i class="fas fa-clipboard-list"></i> طلباتي</h3><div id="myRequestsContent"></div></div>
     </main>
 
-    <!-- MODALS -->
     <div class="modal-overlay" id="gymModal"><div class="modal-sheet"><div class="modal-handle"></div><div class="modal-header"><h3 id="modalTitle">تفاصيل</h3><button class="modal-close" onclick="closeModal('gymModal')"><i class="fas fa-times"></i></button></div><div class="modal-body" id="modalBody"></div><div class="modal-footer" id="modalFooter"></div></div></div>
     <div class="modal-overlay" id="filterModal"><div class="modal-sheet"><div class="modal-handle"></div><div class="modal-header"><h3><i class="fas fa-sliders-h"></i> تصفية</h3><button class="modal-close" onclick="closeModal('filterModal')"><i class="fas fa-times"></i></button></div><div class="modal-body" id="filterBody"></div><div class="modal-footer" id="filterFooter"></div></div></div>
     <div class="modal-overlay" id="qrModal"><div class="modal-sheet"><div class="modal-handle"></div><div class="modal-header"><h3><i class="fas fa-qrcode"></i> QR Code</h3><button class="modal-close" onclick="closeModal('qrModal')"><i class="fas fa-times"></i></button></div><div class="modal-body"><div class="qr-container"><p id="qrGymName"></p><div id="qrCode"></div><button class="btn btn-primary btn-sm" onclick="copyGymLink()" style="margin-top:12px;"><i class="fas fa-copy"></i> نسخ الرابط</button></div></div></div></div>
     <div class="modal-overlay" id="shareModal"><div class="modal-sheet"><div class="modal-handle"></div><div class="modal-header"><h3><i class="fas fa-share-alt"></i> مشاركة</h3><button class="modal-close" onclick="closeModal('shareModal')"><i class="fas fa-times"></i></button></div><div class="modal-body"><p id="shareGymName" style="text-align:center;margin-bottom:12px;"></p><div class="share-menu"><button class="share-btn whatsapp" onclick="shareViaWhatsApp()"><i class="fab fa-whatsapp"></i></button><button class="share-btn facebook" onclick="shareViaFacebook()"><i class="fab fa-facebook-f"></i></button><button class="share-btn copy" onclick="copyShareLink()"><i class="fas fa-link"></i></button></div></div></div></div>
-    
-    <!-- CONFIRM -->
     <div class="confirm-dialog" id="confirmDialog"><h3 id="confirmTitle">تأكيد</h3><p id="confirmBody">هل أنت متأكد؟</p><div class="confirm-buttons"><button class="btn-confirm-no" id="confirmCancel">إلغاء</button><button class="btn-confirm-yes" id="confirmYes">تأكيد</button></div></div>
-    
-    <!-- SIDEBAR -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header"><h3>Gymawy</h3><button class="sidebar-close" id="sidebarClose"><i class="fas fa-times"></i></button></div>
@@ -316,11 +289,7 @@
             <button class="sidebar-item" id="sidebarRegisterCoach"><i class="fas fa-store"></i> سجل كصاحب جيم <span style="background:var(--primary);color:white;padding:2px 8px;border-radius:10px;font-size:9px;margin-right:auto;">جديد</span></button>
         </div>
     </aside>
-
-    <!-- TOAST -->
     <div class="toast" id="toast"></div>
-
-    <!-- BOTTOM NAV -->
     <nav class="bottom-nav" id="bottomNav" style="display:none;">
         <button class="nav-item active" data-page="home"><i class="fas fa-home"></i><span>الرئيسية</span></button>
         <button class="nav-item" data-page="notifications"><i class="fas fa-bell"></i><span>إشعارات</span><span class="nav-badge" id="navNotifBadge">0</span></button>
@@ -335,9 +304,4 @@
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <script src="app.js"></script>
 </body>
-</html>
-    <script  src="./script.js"></script>
-
-  </body>
-  
 </html>
