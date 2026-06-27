@@ -13,24 +13,15 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="FToscdDzJECBXQITnlnmeCaBqoXg_uKvxIX8YiDn-LE" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Gymawy | جيماوي</title>
-    <meta name="description" content="منصة الجيمات الذكية في مصر - مجانية بالكامل">
-    
+    <meta name="description" content="منصة الجيمات الذكية في مصر">
     <meta name="theme-color" content="#6C5CE7">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Gymawy">
-    
     <link rel="icon" type="image/png" href="https://i.ibb.co/XZH0qHBR/logo.png">
-    <link rel="apple-touch-icon" href="https://i.ibb.co/XZH0qHBR/logo.png">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <style>
         :root {
             --primary: #6C5CE7; --primary-dark: #5A4BD1; --primary-light: #A29BFE;
@@ -56,8 +47,8 @@
         @keyframes bounceIn { 0%{transform:scale(0.3);opacity:0;} 50%{transform:scale(1.05);} 100%{transform:scale(1);opacity:1;} }
         @keyframes spin { to{transform:rotate(360deg);} }
 
-        .login-overlay { position:fixed; top:0; left:0; right:0; bottom:0; background:var(--bg); z-index:9999; display:flex; align-items:flex-start; justify-content:center; padding:20px; overflow-y:auto; }
-        .login-card { background:var(--card); border-radius:var(--radius); padding:30px 24px; box-shadow:0 10px 40px rgba(0,0,0,0.12); text-align:center; width:100%; max-width:400px; animation:bounceIn 0.5s ease; margin:20px 0 40px; }
+        .login-overlay { position:fixed; top:0; left:0; right:0; bottom:0; background:var(--bg); z-index:9999; display:flex; align-items:center; justify-content:center; padding:20px; overflow-y:auto; }
+        .login-card { background:var(--card); border-radius:var(--radius); padding:32px 24px; box-shadow:0 10px 40px rgba(0,0,0,0.12); text-align:center; width:100%; max-width:420px; animation:bounceIn 0.5s ease; }
         .login-logo { width:90px; height:90px; border-radius:20px; margin:0 auto 16px; }
         .login-logo img { width:90px; height:90px; border-radius:20px; }
 
@@ -81,7 +72,7 @@
         .btn-icon-badge { position:absolute; top:2px; right:2px; width:18px; height:18px; background:var(--danger); color:white; border-radius:50%; font-size:9px; font-weight:700; display:none; align-items:center; justify-content:center; border:2px solid var(--card); }
         .btn-icon-badge.show { display:flex; }
 
-        .container { max-width:600px; margin:0 auto; padding:12px 16px; }
+        .container { max-width:620px; margin:0 auto; padding:12px 16px; }
         .free-banner { background:linear-gradient(135deg,var(--success),#00A884); color:white; text-align:center; padding:10px; font-size:13px; font-weight:700; border-radius:var(--radius-sm); margin-bottom:12px; }
         .search-box { background:var(--card); border-radius:50px; padding:4px 6px 4px 20px; display:flex; align-items:center; gap:8px; box-shadow:0 2px 15px rgba(0,0,0,0.08); border:2px solid transparent; margin-bottom:12px; transition:var(--transition); }
         .search-box:focus-within { border-color:var(--primary); }
@@ -96,6 +87,7 @@
         .gym-card { background:var(--card); border-radius:var(--radius); overflow:hidden; box-shadow:0 2px 15px rgba(0,0,0,0.08); cursor:pointer; position:relative; }
         .gym-card-header { position:relative; width:100%; height:180px; background:linear-gradient(135deg,#667eea,#764ba2); overflow:hidden; }
         .gym-card-header img { width:100%; height:100%; object-fit:cover; }
+        .gym-card-overlay { position:absolute; bottom:0; left:0; right:0; padding:16px; background:linear-gradient(transparent,rgba(0,0,0,0.7)); color:white; font-weight:600; font-size:13px; }
         .badge { position:absolute; padding:5px 10px; border-radius:50px; font-size:10px; font-weight:700; z-index:5; display:flex; align-items:center; gap:4px; }
         .badge-verified { top:12px; right:12px; background:linear-gradient(135deg,#FFD700,#FFA500); color:#333; }
         .badge-gender { top:12px; left:12px; background:rgba(255,255,255,0.9); color:var(--dark); }
@@ -104,7 +96,6 @@
         .btn-favorite.active { color:var(--danger); animation:heartBeat 0.6s ease; }
         @keyframes heartBeat { 0%,100%{transform:scale(1);} 25%{transform:scale(1.2);} 50%{transform:scale(1);} 75%{transform:scale(1.2);} }
         .btn-share-card { position:absolute; top:12px; left:90px; z-index:5; width:32px; height:32px; border-radius:50%; background:white; border:none; cursor:pointer; font-size:14px; color:var(--gray-light); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.2); }
-        .gym-card-overlay { position:absolute; bottom:0; left:0; right:0; padding:16px; background:linear-gradient(transparent,rgba(0,0,0,0.7)); color:white; font-weight:600; font-size:13px; }
         .gym-card-body { padding:14px; }
         .gym-card-title { font-size:18px; font-weight:800; margin-bottom:4px; display:flex; justify-content:space-between; }
         .gym-card-location { font-size:12px; color:var(--text-secondary); margin-bottom:10px; display:flex; align-items:center; gap:4px; }
@@ -219,6 +210,7 @@
         .toast.warning { background:var(--warning); color:#333; }
         .toast.info { background:var(--primary); color:white; }
         .toast.show { display:block; }
+        .request-card { background:var(--card); border-radius:12px; padding:14px; margin-bottom:8px; border:1px solid var(--border); }
         .qr-container { text-align:center; padding:20px; }
         .share-menu { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; padding:10px; }
         .share-btn { width:50px; height:50px; border-radius:50%; border:none; cursor:pointer; font-size:22px; color:white; }
@@ -248,7 +240,7 @@
     <div class="onboarding-overlay" id="onboardingOverlay">
         <div class="onboarding-slide active"><div class="onboarding-icon purple"><i class="fas fa-dumbbell"></i></div><h2>أهلاً بك في Gymawy</h2><p style="color:var(--text-secondary);">أول منصة جيمات ذكية في مصر</p><div class="onboarding-dots"><div class="onboarding-dot active"></div><div class="onboarding-dot"></div><div class="onboarding-dot"></div></div><button class="btn btn-primary" onclick="nextOnboarding(2)">التالي</button></div>
         <div class="onboarding-slide"><div class="onboarding-icon green"><i class="fas fa-map-marker-alt"></i></div><h2>تصفح الجيمات</h2><p style="color:var(--text-secondary);">شوف الجيمات القريبة منك وقارن بينهم</p><div class="onboarding-dots"><div class="onboarding-dot"></div><div class="onboarding-dot active"></div><div class="onboarding-dot"></div></div><button class="btn btn-primary" onclick="nextOnboarding(3)">التالي</button></div>
-        <div class="onboarding-slide"><div class="onboarding-icon orange"><i class="fas fa-check-circle"></i></div><h2>مجاني 100%</h2><p style="color:var(--text-secondary);">التطبيق مجاني - بدون أي رسوم</p><div class="onboarding-dots"><div class="onboarding-dot"></div><div class="onboarding-dot"></div><div class="onboarding-dot active"></div></div><button class="btn btn-success" onclick="finishOnboarding()">يلا نبدأ</button></div>
+        <div class="onboarding-slide"><div class="onboarding-icon orange"><i class="fas fa-check-circle"></i></div><h2>اشترك وانت في مكانك</h2><p style="color:var(--text-secondary);">مجاني 100% - ادفع بس رسوم الجيم</p><div class="onboarding-dots"><div class="onboarding-dot"></div><div class="onboarding-dot"></div><div class="onboarding-dot active"></div></div><button class="btn btn-success" onclick="finishOnboarding()">يلا نبدأ</button></div>
     </div>
 
     <header class="header" id="mainHeader" style="display:none;">
@@ -262,7 +254,7 @@
 
     <main class="container" id="mainContainer" style="display:none;">
         <div id="homePage" class="page active">
-            <div class="free-banner"><i class="fas fa-gift"></i> التطبيق مجاني 100% للمستخدمين</div>
+            <div class="free-banner"><i class="fas fa-gift"></i> التطبيق مجاني 100% للمستخدمين - ادفع فقط رسوم الجيم</div>
             <div class="search-box"><i class="fas fa-search" style="color:var(--gray-light);flex-shrink:0;"></i><input type="text" id="searchInput" placeholder="ابحث عن جيم، مدينة، محافظة..."><button class="filter-btn" onclick="showFilterModal()"><i class="fas fa-sliders-h"></i></button></div>
             <div class="filter-tags" id="filterTags"><span class="filter-tag active" data-filter="all">الكل</span><span class="filter-tag" data-filter="verified"><i class="fas fa-check-circle"></i> موثق</span><span class="filter-tag" data-filter="mixed"><i class="fas fa-venus-mars"></i> مختلط</span><span class="filter-tag" data-filter="men"><i class="fas fa-male"></i> رجال</span><span class="filter-tag" data-filter="women"><i class="fas fa-female"></i> سيدات</span></div>
             <div class="section-title" id="recentTitle" style="display:none;"><i class="fas fa-history"></i> آخر مشاهدة</div>
@@ -295,7 +287,7 @@
             <button class="sidebar-item" id="sidebarPrivacy"><i class="fas fa-shield-alt"></i> سياسة الخصوصية</button>
             <button class="sidebar-item" id="sidebarForum"><i class="fas fa-comments"></i> المنتدى</button>
             <div class="sidebar-divider"></div>
-            <button class="sidebar-item" id="sidebarRegisterCoach"><i class="fas fa-plus-circle"></i> أضف جيمك مجاناً <span style="background:var(--success);color:white;padding:2px 8px;border-radius:10px;font-size:9px;margin-right:auto;">مجاني</span></button>
+            <button class="sidebar-item" id="sidebarRegisterCoach"><i class="fas fa-store"></i> أضف جيمك مجاناً <span style="background:var(--primary);color:white;padding:2px 8px;border-radius:10px;font-size:9px;margin-right:auto;">جديد</span></button>
         </div>
     </aside>
     <div class="toast" id="toast"></div>
